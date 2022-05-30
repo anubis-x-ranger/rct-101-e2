@@ -4,19 +4,24 @@ import Pagination from "./Pagination";
 import Product from "./Product";
 import {Flex,Grid} from '@chakra-ui/react'
 
-const Products = ({products,setProducts,limit,setLimit,page,setPage,tcount,setTcount}) => {
+const Products = ({products,setProducts,limit,setLimit,page,setPage}) => {
   // TODO: Remove below const and instead import them from chakra
   
   return (
     <Flex direction="column">
       {/*  AddProduct */}
       <AddProduct products={products} setproducts={setProducts}/>
-      <Grid>
+      <Grid templateColumns='repeat(5, 1fr)' gap={6}>
         {/* List of Products */}
-        <Product/>
+        {products.map((product)=>(
+      <div key={product.id} >
+         <Product product={product}/>
+         </div>
+      )
+    )}
       </Grid>
       {/* Pagination */}
-      <Pagination/>
+      <Pagination limit={limit} setLimit={setLimit} page={page} setpage={setPage} />
     </Flex>
   );
 };

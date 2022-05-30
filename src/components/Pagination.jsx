@@ -9,7 +9,7 @@ const Pagination = () => {
     <ButtonGroup size='sm' isAttached variant='outline'>
       <Button data-cy="pagination-first-button" colorScheme='gray'>First</Button>
       <Button data-cy="pagination-previous-button" colorScheme='gray'>Previous</Button>
-      <Select data-cy="pagination-limit-select" placeholder='Select option'>
+      <Select data-cy="pagination-limit-select">
         <option data-cy="pagination-limit-3">3</option>
         <option data-cy="pagination-limit-6">6</option>
         <option data-cy="pagination-limit-9">9</option>
