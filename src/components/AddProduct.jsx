@@ -1,12 +1,14 @@
 import React from "react";
 import { Button,Select,Radio,RadioGroup,ModalBody,Modal,Input } from '@chakra-ui/react';
 
-const AddProduct = () => {
+const AddProduct = ({products,setProducts}) => {
   // TODO: Remove below const and instead import them from chakra
 
 
   return (
-    <>
+<>
+    {products.map((product)=>(
+      <div key={product.id}>
       <Button my={4} data-cy="add-product-button">Add Product</Button>
       <Modal>
         <ModalBody pb={6}>
@@ -25,7 +27,9 @@ const AddProduct = () => {
           <Button data-cy="add-product-submit-button"></Button>
         </ModalBody>
       </Modal>
-    </>
+    </div>
+))}
+  </>  
   );
 };
 
